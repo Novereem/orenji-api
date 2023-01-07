@@ -10,16 +10,24 @@ namespace orenji_backend.Common.Models
         public string Name { get; set; }
         public string Type { get; set; }
         public string Company { get; set; }
-        public string Price { get; set; }
+        public double Price { get; set; }
 
         public Product()
         {
             
         }
 
-        public Product(string name, string type, string company, string price)
+        public Product(string name, string type, string company, double price)
         {
             Id = Guid.NewGuid();
+            Name = name;
+            Type = type;
+            Company = company;
+            Price = price;
+        }
+        
+        public Product(Guid id, string name, string type, string company, double price)
+        {
             Name = name;
             Type = type;
             Company = company;
