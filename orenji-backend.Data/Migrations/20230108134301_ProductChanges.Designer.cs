@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using orenji_backend.Data;
 
 namespace orenji_backend.Data.Migrations
 {
     [DbContext(typeof(OrenjiContext))]
-    partial class OrenjiContextModelSnapshot : ModelSnapshot
+    [Migration("20230108134301_ProductChanges")]
+    partial class ProductChanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,7 +50,7 @@ namespace orenji_backend.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("88012fe0-114f-4a36-858a-49e6cfe92650"),
+                            Id = new Guid("46b03f62-5016-48a1-bd41-aa3d639e6673"),
                             Email = "a@a.com",
                             FirstName = "John",
                             LastName = "Doe",
@@ -58,7 +60,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("cc923a8d-b099-4a94-a6af-0dfbea9221fc"),
+                            Id = new Guid("7903c56e-5785-45ed-b2b7-12cc0189b384"),
                             Email = "b@b.com",
                             FirstName = "Joe",
                             LastName = "Biden",
@@ -68,7 +70,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f269d8a3-37e3-4062-bcd9-bb8ae4031a3c"),
+                            Id = new Guid("b8a175d9-49e1-4609-b7b2-ec6877d5fced"),
                             Email = "c@c.com",
                             FirstName = "James",
                             LastName = "Howard",
@@ -109,7 +111,7 @@ namespace orenji_backend.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9442467f-055d-4814-8411-617d48501cf7"),
+                            Id = new Guid("168d4936-0a69-443c-88cf-61223a0eaccc"),
                             AudienceType = "Male",
                             Company = "The Cool Company",
                             Name = "Cool Pants",
@@ -119,18 +121,18 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("18765e76-5367-47b1-a743-c8582b91a8af"),
+                            Id = new Guid("a8f343eb-ddcd-4dd1-b7f0-5384c5c99f8a"),
                             AudienceType = "Male",
                             Company = "The Quirky Company ",
                             Name = "Quirky Pants",
                             Price = 9.9900000000000002,
-                            Size = "L",
+                            Size = "M",
                             Type = "Pants"
                         },
                         new
                         {
-                            Id = new Guid("1d232014-b9aa-49ae-9584-9dee7605e81d"),
-                            AudienceType = "Female",
+                            Id = new Guid("171b609b-6d5b-4b3e-9f28-97e451ad29a1"),
+                            AudienceType = "Male",
                             Company = "The Lax Company ",
                             Name = "Lax Pants",
                             Price = 1.99,
@@ -139,7 +141,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("76a0262d-a863-4bdb-8a61-9e5e0babafbf"),
+                            Id = new Guid("738fc24d-668d-423b-ab22-bb61fc2c7656"),
                             AudienceType = "Male",
                             Company = "The Modest Company",
                             Name = "Modest Shirt",
@@ -149,18 +151,18 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("35418881-2aa7-4743-b3c2-d1f498c121ab"),
+                            Id = new Guid("43165ec8-4aa0-48aa-a0ed-6587fea0f916"),
                             AudienceType = "Male",
                             Company = "The Calm Company",
                             Name = "Calm Shirt",
                             Price = 19.989999999999998,
-                            Size = "L",
+                            Size = "M",
                             Type = "Shirt"
                         },
                         new
                         {
-                            Id = new Guid("1228a42e-20bc-4caf-919c-66ed1eaa4d34"),
-                            AudienceType = "Female",
+                            Id = new Guid("2977fca5-ba72-4709-8c3d-1d95351279d1"),
+                            AudienceType = "Male",
                             Company = "The Modest Company",
                             Name = "Timid Shirt",
                             Price = 24.989999999999998,
@@ -169,28 +171,28 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("50256ef6-bc7a-475f-b2c5-179e10b2bf8c"),
-                            AudienceType = "Female",
+                            Id = new Guid("4b717fdd-a770-4bcd-bd2e-6fdde86a0350"),
+                            AudienceType = "Male",
                             Company = "The Adamant Company",
                             Name = "Adamant Shirt",
                             Price = 64.989999999999995,
-                            Size = "S",
+                            Size = "M",
                             Type = "Shirt"
                         },
                         new
                         {
-                            Id = new Guid("20d922d0-8117-4906-8bef-6acf54aad172"),
-                            AudienceType = "Genderless",
+                            Id = new Guid("6a8f73be-5bd6-495c-9014-d2857c031343"),
+                            AudienceType = "Male",
                             Company = "The Lonely Company",
                             Name = "Lonely Shirt",
                             Price = 14.99,
-                            Size = "XS",
+                            Size = "M",
                             Type = "Shirt"
                         },
                         new
                         {
-                            Id = new Guid("7d9bd902-da63-44f9-8536-d014ea5fb1ee"),
-                            AudienceType = "Genderless",
+                            Id = new Guid("a9adbdc1-fc2a-4dac-b3fc-8b93ede1c947"),
+                            AudienceType = "Male",
                             Company = "The Jolly Company",
                             Name = "Jolly Shirt",
                             Price = 47.990000000000002,
@@ -199,8 +201,8 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d7237b8a-d35c-467b-82ac-06bf10e88ffb"),
-                            AudienceType = "Genderless",
+                            Id = new Guid("af817a7f-90c6-410c-932e-514274761baf"),
+                            AudienceType = "Male",
                             Company = "The Brave Company",
                             Name = "Brave Shirt",
                             Price = 34.990000000000002,
@@ -209,7 +211,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3964e013-24c9-43ae-a6ae-b72c57660585"),
+                            Id = new Guid("5a417974-a42c-4445-bdcc-cf22d19fb4a1"),
                             AudienceType = "Male",
                             Company = "The Adamant Company",
                             Name = "Adamant Shirt",
@@ -219,8 +221,8 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("92bdb1a3-f319-4b6d-99b5-ac99bfbaf0da"),
-                            AudienceType = "Female",
+                            Id = new Guid("d3eac698-92c0-4fff-aa3c-3b943d057d5f"),
+                            AudienceType = "Male",
                             Company = "The Docile Company",
                             Name = "Docile Shirt",
                             Price = 19.989999999999998,
@@ -229,32 +231,32 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("899faa01-bba9-42f8-bda8-4ae7ac340638"),
-                            AudienceType = "Female",
+                            Id = new Guid("5276a148-eee5-4523-9a53-166d6681c812"),
+                            AudienceType = "Male",
                             Company = "The Lonely Company",
                             Name = "Lonely Shirt",
                             Price = 24.989999999999998,
-                            Size = "S",
+                            Size = "M",
                             Type = "Shoe"
                         },
                         new
                         {
-                            Id = new Guid("46b8eb91-0960-4904-beaa-a011e11d7e27"),
-                            AudienceType = "Female",
+                            Id = new Guid("0b516438-3831-4666-a200-75dc5a82c78f"),
+                            AudienceType = "Male",
                             Company = "The Timid Company",
                             Name = "Timid Shirt",
                             Price = 64.989999999999995,
-                            Size = "L",
+                            Size = "M",
                             Type = "Shoe"
                         },
                         new
                         {
-                            Id = new Guid("9a72af1b-e958-499a-acc3-50a5257c25a2"),
+                            Id = new Guid("e7bb15e3-b88c-4c94-b1dc-7592146a9d0a"),
                             AudienceType = "Male",
                             Company = "The Bold Company",
                             Name = "Bold Shirt",
                             Price = 14.99,
-                            Size = "L",
+                            Size = "M",
                             Type = "Shoe"
                         });
                 });
@@ -278,33 +280,33 @@ namespace orenji_backend.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e6abf797-3eb7-4b0a-a9ae-8859e09076bb"),
-                            fAccount = new Guid("88012fe0-114f-4a36-858a-49e6cfe92650"),
-                            fProduct = new Guid("3964e013-24c9-43ae-a6ae-b72c57660585")
+                            Id = new Guid("ad323092-4519-4879-ac8e-78744df6fa96"),
+                            fAccount = new Guid("46b03f62-5016-48a1-bd41-aa3d639e6673"),
+                            fProduct = new Guid("5a417974-a42c-4445-bdcc-cf22d19fb4a1")
                         },
                         new
                         {
-                            Id = new Guid("3c0b23db-6b47-4363-a79c-20291a5052ab"),
-                            fAccount = new Guid("88012fe0-114f-4a36-858a-49e6cfe92650"),
-                            fProduct = new Guid("92bdb1a3-f319-4b6d-99b5-ac99bfbaf0da")
+                            Id = new Guid("abbb9791-0655-4c27-89d8-235be9382dca"),
+                            fAccount = new Guid("46b03f62-5016-48a1-bd41-aa3d639e6673"),
+                            fProduct = new Guid("d3eac698-92c0-4fff-aa3c-3b943d057d5f")
                         },
                         new
                         {
-                            Id = new Guid("e264ded7-b6bd-4f9b-b88d-d0d88848b67a"),
-                            fAccount = new Guid("88012fe0-114f-4a36-858a-49e6cfe92650"),
-                            fProduct = new Guid("899faa01-bba9-42f8-bda8-4ae7ac340638")
+                            Id = new Guid("5b172a92-01a5-4dd4-985f-b465ede9148c"),
+                            fAccount = new Guid("46b03f62-5016-48a1-bd41-aa3d639e6673"),
+                            fProduct = new Guid("5276a148-eee5-4523-9a53-166d6681c812")
                         },
                         new
                         {
-                            Id = new Guid("23611263-e40a-4d29-9c21-da86a8431349"),
-                            fAccount = new Guid("88012fe0-114f-4a36-858a-49e6cfe92650"),
-                            fProduct = new Guid("46b8eb91-0960-4904-beaa-a011e11d7e27")
+                            Id = new Guid("2f21d87a-fbbd-494a-b6a7-f4a836fbcb06"),
+                            fAccount = new Guid("46b03f62-5016-48a1-bd41-aa3d639e6673"),
+                            fProduct = new Guid("0b516438-3831-4666-a200-75dc5a82c78f")
                         },
                         new
                         {
-                            Id = new Guid("c0ea0292-34a3-4493-b2b8-9181b5668073"),
-                            fAccount = new Guid("88012fe0-114f-4a36-858a-49e6cfe92650"),
-                            fProduct = new Guid("9a72af1b-e958-499a-acc3-50a5257c25a2")
+                            Id = new Guid("808e08dd-9b41-4e67-91bf-f3edcab2004a"),
+                            fAccount = new Guid("46b03f62-5016-48a1-bd41-aa3d639e6673"),
+                            fProduct = new Guid("e7bb15e3-b88c-4c94-b1dc-7592146a9d0a")
                         });
                 });
 #pragma warning restore 612, 618

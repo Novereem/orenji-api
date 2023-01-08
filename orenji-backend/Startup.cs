@@ -45,6 +45,7 @@ namespace orenji_backend
                 {
                     policy.AllowAnyHeader()
                         .AllowAnyMethod()
+                        .AllowAnyHeader()
                         .WithOrigins("http://localhost:3000")
                         .AllowCredentials();
                 });
@@ -77,15 +78,20 @@ namespace orenji_backend
                 .SetIsOriginAllowed(origin => true)
                 .AllowCredentials());
             
-            app.UseCors();
-            
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
+            
             app.UseRouting();
+            
+            app.UseCors();
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

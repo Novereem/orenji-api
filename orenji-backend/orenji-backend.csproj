@@ -20,6 +20,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\orenji-backend.Data\orenji-backend.Data.csproj" />
+      <ProjectReference Include="..\orenji-backend.Logic\orenji-backend.Logic.csproj" />
     </ItemGroup>
 
 </Project>

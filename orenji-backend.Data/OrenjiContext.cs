@@ -12,39 +12,41 @@ namespace orenji_backend.Data
         public DbSet<Account> Account { get; set; }
         public DbSet<ProductInCart> ProductInCart { get; set; }
 
+        //dotnet ef --startup-project ../orenji-backend migrations add "(name of test)"
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             
             //Pants
             Product[] pants =
             {
-                new Product("Cool Pants", ProductTypes.Pants.ToString(), "The Cool Company", 4.99),
-                new Product("Quirky Pants", ProductTypes.Pants.ToString(), "The Quirky Company ", 9.99),
-                new Product("Lax Pants", ProductTypes.Pants.ToString(), "The Lax Company ", 1.99)
+                new Product("Cool Pants", ProductTypes.Pants.ToString(), "The Cool Company", 4.99, AudienceTypes.Male.ToString(),SizeTypes.M.ToString()),
+                new Product("Quirky Pants", ProductTypes.Pants.ToString(), "The Quirky Company ", 9.99, AudienceTypes.Male.ToString(),SizeTypes.L.ToString()),
+                new Product("Lax Pants", ProductTypes.Pants.ToString(), "The Lax Company ", 1.99, AudienceTypes.Female.ToString(),SizeTypes.M.ToString())
             };
             modelBuilder.Entity<Product>().HasData(pants);
             
             //Shirts
             Product[] shirts =
             {
-                new Product("Modest Shirt", ProductTypes.Shirt.ToString(), "The Modest Company", 12.99),
-                new Product("Calm Shirt", ProductTypes.Shirt.ToString(), "The Calm Company", 19.99),
-                new Product("Timid Shirt", ProductTypes.Shirt.ToString(), "The Modest Company", 24.99),
-                new Product("Adamant Shirt", ProductTypes.Shirt.ToString(), "The Adamant Company", 64.99),
-                new Product("Lonely Shirt", ProductTypes.Shirt.ToString(), "The Lonely Company", 14.99),
-                new Product("Jolly Shirt", ProductTypes.Shirt.ToString(), "The Jolly Company", 47.99),
-                new Product("Brave Shirt", ProductTypes.Shirt.ToString(), "The Brave Company", 34.99)
+                new Product("Modest Shirt", ProductTypes.Shirt.ToString(), "The Modest Company", 12.99, AudienceTypes.Male.ToString(),SizeTypes.M.ToString()),
+                new Product("Calm Shirt", ProductTypes.Shirt.ToString(), "The Calm Company", 19.99, AudienceTypes.Male.ToString(),SizeTypes.L.ToString()),
+                new Product("Timid Shirt", ProductTypes.Shirt.ToString(), "The Modest Company", 24.99, AudienceTypes.Female.ToString(),SizeTypes.M.ToString()),
+                new Product("Adamant Shirt", ProductTypes.Shirt.ToString(), "The Adamant Company", 64.99, AudienceTypes.Female.ToString(),SizeTypes.S.ToString()),
+                new Product("Lonely Shirt", ProductTypes.Shirt.ToString(), "The Lonely Company", 14.99, AudienceTypes.Genderless.ToString(),SizeTypes.XS.ToString()),
+                new Product("Jolly Shirt", ProductTypes.Shirt.ToString(), "The Jolly Company", 47.99, AudienceTypes.Genderless.ToString(),SizeTypes.M.ToString()),
+                new Product("Brave Shirt", ProductTypes.Shirt.ToString(), "The Brave Company", 34.99, AudienceTypes.Genderless.ToString(),SizeTypes.M.ToString())
             };
             modelBuilder.Entity<Product>().HasData(shirts);
             
             //Shoes
             Product[] shoes =
             {
-                new Product("Adamant Shirt", ProductTypes.Shoe.ToString(), "The Adamant Company", 12.99),
-                new Product("Docile Shirt", ProductTypes.Shoe.ToString(), "The Docile Company", 19.99),
-                new Product("Lonely Shirt", ProductTypes.Shoe.ToString(), "The Lonely Company", 24.99),
-                new Product("Timid Shirt", ProductTypes.Shoe.ToString(), "The Timid Company", 64.99),
-                new Product("Bold Shirt", ProductTypes.Shoe.ToString(), "The Bold Company", 14.99)
+                new Product("Adamant Shirt", ProductTypes.Shoe.ToString(), "The Adamant Company", 12.99, AudienceTypes.Male.ToString(),SizeTypes.M.ToString()),
+                new Product("Docile Shirt", ProductTypes.Shoe.ToString(), "The Docile Company", 19.99, AudienceTypes.Female.ToString(),SizeTypes.M.ToString()),
+                new Product("Lonely Shirt", ProductTypes.Shoe.ToString(), "The Lonely Company", 24.99, AudienceTypes.Female.ToString(),SizeTypes.S.ToString()),
+                new Product("Timid Shirt", ProductTypes.Shoe.ToString(), "The Timid Company", 64.99, AudienceTypes.Female.ToString(),SizeTypes.L.ToString()),
+                new Product("Bold Shirt", ProductTypes.Shoe.ToString(), "The Bold Company", 14.99, AudienceTypes.Male.ToString(),SizeTypes.L.ToString())
             };
             modelBuilder.Entity<Product>().HasData(shoes);
 
