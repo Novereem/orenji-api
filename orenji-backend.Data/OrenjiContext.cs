@@ -12,7 +12,7 @@ namespace orenji_backend.Data
         public DbSet<Account> Account { get; set; }
         public DbSet<ProductInCart> ProductInCart { get; set; }
 
-        //dotnet ef --startup-project ../orenji-backend migrations add "(name of test)"
+        // Command to run: dotnet ef --startup-project ../orenji-backend migrations add "(name of test)"
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
