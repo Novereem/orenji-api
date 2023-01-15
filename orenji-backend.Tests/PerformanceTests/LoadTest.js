@@ -2,6 +2,9 @@
 import {sleep, check} from 'k6';
 
 export const options = {
+    dns: {
+        policy: "preferIPv6"
+    },
     stages: [
         { duration: '30s', target: 150 },
         { duration: '1s', target: 150 },
@@ -11,6 +14,7 @@ export const options = {
         http_req_duration: ['p(99)<200'],
         http_req_failed: ['rate<0.01'],
     },
+    
 };
 
 const base_url = 'https://localhost:44353'
