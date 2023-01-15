@@ -14,7 +14,7 @@ export const options = {
     
 };
 
-const base_url = 'https://localhost:44353123123123123123'
+const base_url = 'https://localhost:44353123'
 export default () => {
     const responses = http.batch([
         ['GET', `${base_url}/Test`]
