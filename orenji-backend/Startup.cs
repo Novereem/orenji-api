@@ -55,6 +55,7 @@ namespace orenji_backend
                         .AllowCredentials();
                 });
             });
+            /*
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {
                     options.TokenValidationParameters = new TokenValidationParameters
@@ -72,6 +73,7 @@ namespace orenji_backend
             services.AddScoped(cfg => cfg.GetService<IOptions<Jwt>>().Value);
             services.AddMvc();
             services.AddControllers();
+            */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
