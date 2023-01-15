@@ -1,0 +1,56 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  buildandtest:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Unit and integration test
+      run: dotnet test --no-build --verbosity normal
+    - name: Peformance Load test
+      uses: grafana/k6-action@v0.2.0
+      with:
+        filename: orenji-backend.Tests/PerformanceTests/LoadTest.js
+    - name: Peformance Spike test
+      uses: grafana/k6-action@v0.2.0
+      with:
+        filename: orenji-backend.Tests/PerformanceTests/SpikeTest.js
+    - name: Peformance Stress test
+      uses: grafana/k6-action@v0.2.0
+      with:
+        filename: orenji-backend.Tests/PerformanceTests/StressTest.js
+        
+  codescan:
+    runs-on: windows-latest
+    needs: buildandtest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: nuget/setup-nuget@v1.0.5
+      - uses: microsoft/setup-msbuild@v1.0.2
+
+      - name: Project Setup
+        uses: security-code-scan/security-code-scan-add-action@main
+
+      - name: test
+        run: |
+          nuget restore
+          msbuild
