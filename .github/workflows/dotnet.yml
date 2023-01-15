@@ -27,15 +27,15 @@ jobs:
     - name: Unit and integration test
       run: dotnet test --no-build --verbosity normal
     - name: Peformance Load test
-      uses: grafana/k6-action@v0.1.0
+      uses: grafana/k6-action@v0.2.0
       with:
         filename: LoadTest.js
     - name: Peformance Spike test
-      uses: grafana/k6-action@v0.1.0
+      uses: grafana/k6-action@v0.2.0
       with:
         filename: SpikeTest.js
     - name: Peformance Stress test
-      uses: grafana/k6-action@v0.1.0
+      uses: grafana/k6-action@v0.2.0
       with:
         filename: StressTest.js
         
