@@ -31,7 +31,7 @@ namespace orenji_backend.Controllers
             return _cartService.GetAllProductsInCart(TokenToApiAccount());
         }
         
-        [HttpPost("/cart/remove/{productId}")]
+        [HttpDelete("/cart/{productId}")]
         public bool RemoveProductInCart(string productId)
         {
             var apiProduct = new ApiProduct
@@ -41,7 +41,7 @@ namespace orenji_backend.Controllers
             return _cartService.RemoveProductInCart(apiProduct, TokenToApiAccount());
         }
         
-        [HttpPost("/cart/add/{productId}")]
+        [HttpPost("/cart/{productId}")]
         public bool AddProductToCart(string productId)
         {
             var apiProduct = new ApiProduct
