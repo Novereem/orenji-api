@@ -20,7 +20,7 @@ export const options = {
     },
 };
 
-const base_url = 'https://localhost:44353'
+const base_url = 'http://localhost:44353'
 export default () => {
     const responses = http.batch([
         ['GET', `${base_url}/products/filter/filterProducts?Audience=Male`]

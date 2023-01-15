@@ -50,8 +50,8 @@ namespace orenji_backend
                 {
                     policy.AllowAnyHeader()
                         .AllowAnyMethod()
-                        .AllowAnyHeader()/*
-                        .WithOrigins("http://localhost:3000")*/
+                        .AllowAnyHeader()
+                        .WithOrigins("http://localhost:3000")
                         .AllowCredentials();
                 });
             });
