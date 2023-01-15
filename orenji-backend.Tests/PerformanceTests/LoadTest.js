@@ -2,9 +2,6 @@
 import {sleep, check} from 'k6';
 
 export const options = {
-    dns: {
-        policy: "preferIPv6"
-    },
     stages: [
         { duration: '30s', target: 150 },
         { duration: '1s', target: 150 },
