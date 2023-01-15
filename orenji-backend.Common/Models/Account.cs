@@ -14,13 +14,14 @@ namespace orenji_backend.Common.Models
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string Size { get; set; }
+        public string Role { get; set; }
 
         public Account()
         {
             
         }
 
-        public Account(string firstName, string lastName, string password, string email, string phoneNumber, string size)
+        public Account(string firstName, string lastName, string password, string email, string phoneNumber, string size, string role)
         {
             Id = Guid.NewGuid();
             FirstName = firstName;
@@ -29,16 +30,19 @@ namespace orenji_backend.Common.Models
             Email = email;
             PhoneNumber = phoneNumber;
             Size = size;
+            Role = role;
         }
         
-        public Account(Guid id, string firstName, string lastName, string password, string email, string phoneNumber, string size)
+        public Account(string id, string firstName, string lastName, string password, string email, string phoneNumber, string size, string role)
         {
+            Id = Guid.Parse(id);
             FirstName = firstName;
             LastName = lastName;
             Password = password;
             Email = email;
             PhoneNumber = phoneNumber;
             Size = size;
+            Role = role;
         }
     }
 }

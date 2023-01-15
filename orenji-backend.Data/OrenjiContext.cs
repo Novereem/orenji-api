@@ -12,7 +12,7 @@ namespace orenji_backend.Data
         public DbSet<Account> Account { get; set; }
         public DbSet<ProductInCart> ProductInCart { get; set; }
 
-        // Command to run: dotnet ef --startup-project ../orenji-backend migrations add "(name of test)"
+        // Command to run: dotnet ef --startup-project ../orenji-backend migrations add (name of test)
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -52,9 +52,9 @@ namespace orenji_backend.Data
 
             Account[] accounts =
             {
-                new Account("John", "Doe", "a", "a@a.com", "11234567890", SizeTypes.M.ToString()),
-                new Account("Joe", "Biden", "b", "b@b.com", "21234567890", SizeTypes.L.ToString()),
-                new Account("James", "Howard", "c", "c@c.com", "31234567890", SizeTypes.XL.ToString())
+                new Account("John", "Doe", "a", "a@a.com", "11234567890", SizeTypes.M.ToString(), "Administrator"),
+                new Account("Joe", "Biden", "b", "b@b.com", "21234567890", SizeTypes.L.ToString(), "User"),
+                new Account("James", "Howard", "c", "c@c.com", "31234567890", SizeTypes.XL.ToString(), "User")
             };
             
             modelBuilder.Entity<Account>().HasData(accounts);

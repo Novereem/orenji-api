@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using orenji_backend.Data;
 
 namespace orenji_backend.Data.Migrations
 {
     [DbContext(typeof(OrenjiContext))]
-    partial class OrenjiContextModelSnapshot : ModelSnapshot
+    [Migration("20230115001811_AddedAccountRoles")]
+    partial class AddedAccountRoles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +53,7 @@ namespace orenji_backend.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("567cf2ec-f095-420f-8ed5-ad7fcbfcf50b"),
+                            Id = new Guid("e064cdc4-f114-4f3d-bafc-7bca99c25598"),
                             Email = "a@a.com",
                             FirstName = "John",
                             LastName = "Doe",
@@ -62,7 +64,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9a5de550-1e05-4f3c-a161-8708b18ab88c"),
+                            Id = new Guid("8a07df4c-9375-49e9-bc5d-0d53bc099244"),
                             Email = "b@b.com",
                             FirstName = "Joe",
                             LastName = "Biden",
@@ -73,7 +75,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("35cf9275-009b-4335-bbcc-4f512486d403"),
+                            Id = new Guid("30b3bd96-bddf-47b5-bc23-8cb8238ae14d"),
                             Email = "c@c.com",
                             FirstName = "James",
                             LastName = "Howard",
@@ -115,7 +117,7 @@ namespace orenji_backend.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b5a6b395-b75e-4343-ae1a-183e7c641771"),
+                            Id = new Guid("74c914d0-c12c-44b4-b5a5-3039982bd086"),
                             AudienceType = "Male",
                             Company = "The Cool Company",
                             Name = "Cool Pants",
@@ -125,7 +127,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("024f5426-2458-4273-991b-fb3863482e57"),
+                            Id = new Guid("0375b5ba-e44f-4eee-905e-bebe1be16d07"),
                             AudienceType = "Male",
                             Company = "The Quirky Company ",
                             Name = "Quirky Pants",
@@ -135,7 +137,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ad6446b6-ffd8-4c51-b496-158d6da4d5b4"),
+                            Id = new Guid("11d912e7-fe1e-4f17-be10-4fa8b454820d"),
                             AudienceType = "Female",
                             Company = "The Lax Company ",
                             Name = "Lax Pants",
@@ -145,7 +147,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f1319c4f-2674-4e22-af38-48ca25c154fd"),
+                            Id = new Guid("25f4e013-2ccb-4a5e-bff1-7ec58c1f9392"),
                             AudienceType = "Male",
                             Company = "The Modest Company",
                             Name = "Modest Shirt",
@@ -155,7 +157,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("09089ee3-77dc-42a0-8b6e-2cb9b9593537"),
+                            Id = new Guid("80f11f23-2b44-43f8-a177-9ef1ac75f52c"),
                             AudienceType = "Male",
                             Company = "The Calm Company",
                             Name = "Calm Shirt",
@@ -165,7 +167,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c0d7a583-4bb5-481a-b1ae-c1c8a47f309f"),
+                            Id = new Guid("ae6a11c8-cdaa-4783-a030-1dd62beba250"),
                             AudienceType = "Female",
                             Company = "The Modest Company",
                             Name = "Timid Shirt",
@@ -175,7 +177,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("219363f7-4997-4e96-89f0-99ec78c64ae9"),
+                            Id = new Guid("2679bd68-e563-4180-a7f3-9b1c43eb3819"),
                             AudienceType = "Female",
                             Company = "The Adamant Company",
                             Name = "Adamant Shirt",
@@ -185,7 +187,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f6da7f5b-a446-42f4-9e2b-7abe0c24e9bb"),
+                            Id = new Guid("5f7d25b4-f452-4015-aa08-bfd87d962f05"),
                             AudienceType = "Genderless",
                             Company = "The Lonely Company",
                             Name = "Lonely Shirt",
@@ -195,7 +197,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("98369b84-bd83-4853-ad78-0873e50f98aa"),
+                            Id = new Guid("8c2f9d2f-4c38-4ceb-a4ae-e4586fb79591"),
                             AudienceType = "Genderless",
                             Company = "The Jolly Company",
                             Name = "Jolly Shirt",
@@ -205,7 +207,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("748d03d8-8d3c-4dcf-9d20-efb6fe389e66"),
+                            Id = new Guid("6588f607-7689-415d-8b59-7775eb3e9f6e"),
                             AudienceType = "Genderless",
                             Company = "The Brave Company",
                             Name = "Brave Shirt",
@@ -215,7 +217,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("462814c3-6b78-4713-a67a-9780341f9b81"),
+                            Id = new Guid("ce78bcd4-afb8-4af4-bb86-4d10fc7d4edd"),
                             AudienceType = "Male",
                             Company = "The Adamant Company",
                             Name = "Adamant Shirt",
@@ -225,7 +227,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("439e84e1-8995-4876-a669-54649890e156"),
+                            Id = new Guid("e162e470-16d3-4b53-927b-b006c76dbd25"),
                             AudienceType = "Female",
                             Company = "The Docile Company",
                             Name = "Docile Shirt",
@@ -235,7 +237,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("682c75e0-eebe-457e-999b-3d24d0f4efd9"),
+                            Id = new Guid("edd52901-7c74-470d-8534-4ecc9f1ba12e"),
                             AudienceType = "Female",
                             Company = "The Lonely Company",
                             Name = "Lonely Shirt",
@@ -245,7 +247,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1f61adac-beff-44ec-88a3-06c29ee45510"),
+                            Id = new Guid("055471d9-f7e4-471c-a9e3-a440e8578bf0"),
                             AudienceType = "Female",
                             Company = "The Timid Company",
                             Name = "Timid Shirt",
@@ -255,7 +257,7 @@ namespace orenji_backend.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("36336085-885b-4fda-8d45-0e79a6387469"),
+                            Id = new Guid("711dc800-1475-4d67-adb7-d7e52544190d"),
                             AudienceType = "Male",
                             Company = "The Bold Company",
                             Name = "Bold Shirt",
@@ -284,33 +286,33 @@ namespace orenji_backend.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c136025d-07a0-488b-864a-5de03a3d85b2"),
-                            fAccount = new Guid("567cf2ec-f095-420f-8ed5-ad7fcbfcf50b"),
-                            fProduct = new Guid("462814c3-6b78-4713-a67a-9780341f9b81")
+                            Id = new Guid("3d1e4972-9ecf-4052-aeed-ed544fadec0b"),
+                            fAccount = new Guid("e064cdc4-f114-4f3d-bafc-7bca99c25598"),
+                            fProduct = new Guid("ce78bcd4-afb8-4af4-bb86-4d10fc7d4edd")
                         },
                         new
                         {
-                            Id = new Guid("be434191-663a-43b5-a796-56e301a951cd"),
-                            fAccount = new Guid("567cf2ec-f095-420f-8ed5-ad7fcbfcf50b"),
-                            fProduct = new Guid("439e84e1-8995-4876-a669-54649890e156")
+                            Id = new Guid("41022a5f-4a81-4d8e-9cb4-18a83146f0f9"),
+                            fAccount = new Guid("e064cdc4-f114-4f3d-bafc-7bca99c25598"),
+                            fProduct = new Guid("e162e470-16d3-4b53-927b-b006c76dbd25")
                         },
                         new
                         {
-                            Id = new Guid("48650102-88a8-4f2a-bc98-3c5a0c483149"),
-                            fAccount = new Guid("567cf2ec-f095-420f-8ed5-ad7fcbfcf50b"),
-                            fProduct = new Guid("682c75e0-eebe-457e-999b-3d24d0f4efd9")
+                            Id = new Guid("4c0cf126-5441-42a4-888d-75cca709b484"),
+                            fAccount = new Guid("e064cdc4-f114-4f3d-bafc-7bca99c25598"),
+                            fProduct = new Guid("edd52901-7c74-470d-8534-4ecc9f1ba12e")
                         },
                         new
                         {
-                            Id = new Guid("4e4d5a15-9c91-45de-9b16-d0065b7d00db"),
-                            fAccount = new Guid("567cf2ec-f095-420f-8ed5-ad7fcbfcf50b"),
-                            fProduct = new Guid("1f61adac-beff-44ec-88a3-06c29ee45510")
+                            Id = new Guid("5ac16cb5-c4c6-4513-8173-556dd94e9647"),
+                            fAccount = new Guid("e064cdc4-f114-4f3d-bafc-7bca99c25598"),
+                            fProduct = new Guid("055471d9-f7e4-471c-a9e3-a440e8578bf0")
                         },
                         new
                         {
-                            Id = new Guid("fe517fe5-a26a-44e4-b143-5ac1755d31f3"),
-                            fAccount = new Guid("567cf2ec-f095-420f-8ed5-ad7fcbfcf50b"),
-                            fProduct = new Guid("36336085-885b-4fda-8d45-0e79a6387469")
+                            Id = new Guid("6d0e1d87-3ba9-49f0-a64e-a2d00d1c9afb"),
+                            fAccount = new Guid("e064cdc4-f114-4f3d-bafc-7bca99c25598"),
+                            fProduct = new Guid("711dc800-1475-4d67-adb7-d7e52544190d")
                         });
                 });
 #pragma warning restore 612, 618

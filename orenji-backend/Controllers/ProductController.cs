@@ -11,7 +11,7 @@ namespace orenji_backend.Controllers
     [EnableCors("AllowCors")]
     [ApiController]
     [Route("[controller]")]
-    public class ProductController
+    public class ProductController : Controller
     {
         private readonly ProductService _productService;
 

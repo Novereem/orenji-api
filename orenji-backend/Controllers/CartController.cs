@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using orenji_backend.Common.Models;
 using orenji_backend.Common.Models.ApiModels;
@@ -12,39 +14,49 @@ namespace orenji_backend.Controllers
     [EnableCors("AllowCors")]
     [ApiController]
     [Route("[controller]")]
-    public class CartController
+    public class CartController : Controller
     {
         private readonly CartService _cartService;
+        private readonly AuthenticationService _authenticationService;
         
         public CartController(OrenjiContext orenjiContext)
         {
             _cartService = new CartService(new CartData(orenjiContext));
+            _authenticationService = new AuthenticationService();
         }
         
         [HttpPost("/cart/")]
-        public object AllProductsInCart([FromBody]ApiAccount apiAccount)
+        public object AllProductsInCart()
         {
-            return _cartService.GetAllProductsInCart(apiAccount);
+            return _cartService.GetAllProductsInCart(TokenToApiAccount());
         }
         
         [HttpPost("/cart/remove/{productId}")]
-        public bool RemoveProductInCart(string productId, [FromBody]ApiAccount apiAccount)
+        public bool RemoveProductInCart(string productId)
         {
             var apiProduct = new ApiProduct
             {
                 Id = Guid.Parse(productId)
             };
-            return _cartService.RemoveProductInCart(apiProduct,apiAccount);
+            return _cartService.RemoveProductInCart(apiProduct, TokenToApiAccount());
         }
         
         [HttpPost("/cart/add/{productId}")]
-        public bool AddProductToCart(string productId, [FromBody]ApiAccount apiAccount)
+        public bool AddProductToCart(string productId)
         {
             var apiProduct = new ApiProduct
             {
                 Id = Guid.Parse(productId)
             };
-            return _cartService.AddProductToCart(apiProduct, apiAccount);
+            return _cartService.AddProductToCart(apiProduct, TokenToApiAccount());
+        }
+        
+        [ApiExplorerSettings(IgnoreApi = true)]
+        [NonAction]
+        private ApiAccount TokenToApiAccount()
+        {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            return _authenticationService.TokenToApiAccount(identity);
         }
     }
 }
