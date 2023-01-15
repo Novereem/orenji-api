@@ -15,9 +15,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
@@ -27,15 +27,15 @@ jobs:
     - name: Unit and integration test
       run: dotnet test --no-build --verbosity normal
     - name: Peformance Load test
-      uses: grafana/k6-action@v0.2.0
+      uses: k6io/action@v0.1
       with:
         filename: orenji-backend.Tests/PerformanceTests/LoadTest.js
     - name: Peformance Spike test
-      uses: grafana/k6-action@v0.2.0
+      uses: k6io/action@v0.1
       with:
         filename: orenji-backend.Tests/PerformanceTests/SpikeTest.js
     - name: Peformance Stress test
-      uses: grafana/k6-action@v0.2.0
+      uses: k6io/action@v0.1
       with:
         filename: orenji-backend.Tests/PerformanceTests/StressTest.js
         
