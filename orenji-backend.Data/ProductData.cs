@@ -25,19 +25,19 @@ namespace orenji_backend.Data
             return _orenjiContext.Product.Where(x => x.AudienceType == audienceType && x.Type == clothingType).ToList();
         }
 
-        public List<Product> AllProductsByAudienceAndSize(string audienceType, string size)
+        public List<Product> GetAllProductsByAudienceAndSize(string audienceType, string size)
         {
             return _orenjiContext.Product.Where(x => x.AudienceType == audienceType && x.Size == size).ToList();
         }
 
-        public List<Product> AllProductsByAudienceClothingTypeAndSize(string audienceType, string clothingType, string size)
+        public List<Product> GetAllProductsByAudienceClothingTypeAndSize(string audienceType, string clothingType, string size)
         {
             return _orenjiContext.Product.Where(x => x.AudienceType == audienceType && x.Type == clothingType && x.Size == size).ToList();
         }
 
-        public Product GetIndividualProduct(string product)
+        public Product GetIndividualProduct(string productId)
         {
-            return _orenjiContext.Product.First(x => x.Id.ToString() == product);
+            return _orenjiContext.Product.First(x => x.Id.ToString() == productId);
         }
     }
 }

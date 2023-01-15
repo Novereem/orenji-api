@@ -8,8 +8,8 @@ namespace orenji_backend.Common.Interfaces
     {
         public List<Product> GetAllProductsByAudienceType(string audienceType);
         public List<Product> GetAllProductsByAudienceAndClothingType(string audienceType, string clothingType);
-        public List<Product> AllProductsByAudienceAndSize(string audienceType, string size);
-        public List<Product> AllProductsByAudienceClothingTypeAndSize(string audienceType, string clothingType, string size);
+        public List<Product> GetAllProductsByAudienceAndSize(string audienceType, string size);
+        public List<Product> GetAllProductsByAudienceClothingTypeAndSize(string audienceType, string clothingType, string size);
         public Product GetIndividualProduct(string product);
     }
 }

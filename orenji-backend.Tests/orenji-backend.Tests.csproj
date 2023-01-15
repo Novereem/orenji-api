@@ -22,8 +22,4 @@
       <ProjectReference Include="..\orenji-backend.Logic\orenji-backend.Logic.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="UnitTests" />
-    </ItemGroup>
-
 </Project>

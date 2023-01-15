@@ -27,12 +27,12 @@ namespace orenji_backend.Logic
             
             if (filter.Size != null && filter.Audience != null && filter.Type == null)
             {
-                return AllProductsByAudienceAndSize(filter.Audience, filter.Size);
+                return GetAllProductsByAudienceAndSize(filter.Audience, filter.Size);
             }
             
             if (filter.Size != null && filter.Audience != null && filter.Type != null)
             {
-                return AllProductsByAudienceClothingTypeAndSize(filter.Audience, filter.Type, filter.Size);
+                return GetAllProductsByAudienceClothingTypeAndSize(filter.Audience, filter.Type, filter.Size);
             }
 
             return null;
@@ -48,14 +48,14 @@ namespace orenji_backend.Logic
             return _productData.GetAllProductsByAudienceAndClothingType(audienceType, clothingType);
         }
         
-        public List<Product> AllProductsByAudienceAndSize(string audienceType,string size)
+        public List<Product> GetAllProductsByAudienceAndSize(string audienceType,string size)
         {
-            return _productData.AllProductsByAudienceAndSize(audienceType, size);
+            return _productData.GetAllProductsByAudienceAndSize(audienceType, size);
         }
         
-        public List<Product> AllProductsByAudienceClothingTypeAndSize(string audienceType, string clothingType,string size)
+        public List<Product> GetAllProductsByAudienceClothingTypeAndSize(string audienceType, string clothingType,string size)
         {
-            return _productData.AllProductsByAudienceClothingTypeAndSize(audienceType, clothingType, size);
+            return _productData.GetAllProductsByAudienceClothingTypeAndSize(audienceType, clothingType, size);
         }
 
         public Product GetIndividualProduct(string product)
