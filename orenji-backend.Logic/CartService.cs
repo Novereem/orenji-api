@@ -32,15 +32,24 @@ namespace orenji_backend.Logic
 
         public bool RemoveProductInCart(ApiProduct apiProduct, ApiAccount apiAccount)
         {
-            var productInCart = _cartData.GetProductInCart(apiProduct, apiAccount);
-            return _cartData.RemoveProductInCart(productInCart);
+            if (apiProduct != null && apiAccount != null)
+            {
+                 var productInCart = _cartData.GetProductInCart(apiProduct, apiAccount);
+                return _cartData.RemoveProductInCart(productInCart);
+            }
+
+            return false;
         }
 
         public bool AddProductToCart(ApiProduct apiProduct, ApiAccount apiAccount)
         {
-            ProductInCart productInCart = new ProductInCart(apiAccount.Id, apiProduct.Id);
-            
-            return _cartData.AddProductToCart(productInCart);
+            if (apiProduct != null && apiAccount != null)
+            {
+                ProductInCart productInCart = new ProductInCart(apiAccount.Id, apiProduct.Id);
+                return _cartData.AddProductToCart(productInCart);
+            }
+
+            return false;
         }
     }
 }

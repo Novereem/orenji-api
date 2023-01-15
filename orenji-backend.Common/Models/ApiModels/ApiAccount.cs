@@ -17,10 +17,20 @@ namespace orenji_backend.Common.Models.ApiModels
         {
             
         }
-        
         public ApiAccount(string id, string firstName, string lastName, string password, string email, string phoneNumber, string size, string role)
         {
             Id = Guid.Parse(id);
+            FirstName = firstName;
+            LastName = lastName;
+            Password = password;
+            Email = email;
+            PhoneNumber = phoneNumber;
+            Size = size;
+            Role = role;
+        }
+        public ApiAccount(string firstName, string lastName, string password, string email, string phoneNumber, string size, string role)
+        {
+            Id = Guid.NewGuid();
             FirstName = firstName;
             LastName = lastName;
             Password = password;
