@@ -43,7 +43,7 @@ namespace orenji_backend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "orenji_backend", Version = "v1"});
             });
-            /*services.AddCors(options =>
+            services.AddCors(options =>
             {
                 options.AddPolicy("AllowCORS", builder => builder.WithOrigins("localhost:3000"));
                 options.AddPolicy("ClientPermission", policy =>
@@ -54,7 +54,7 @@ namespace orenji_backend
                         .WithOrigins("http://localhost:3000")
                         .AllowCredentials();
                 });
-            });*/
+            });
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {
                     options.TokenValidationParameters = new TokenValidationParameters
@@ -94,21 +94,21 @@ namespace orenji_backend
                 context.Database.EnsureCreated();
             }
 
-            /*app.UseCors(x => x
+            app.UseCors(x => x
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .SetIsOriginAllowed(origin => true)
-                .AllowCredentials());*/
+                .AllowCredentials());
             
             app.UseHttpsRedirection();
 
-            /*app.UseAuthentication();*/
+            app.UseAuthentication();
             
             app.UseRouting();
             
-            /*app.UseCors();*/
+            app.UseCors();
 
-            /*app.UseAuthorization();*/
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
