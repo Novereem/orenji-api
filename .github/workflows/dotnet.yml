@@ -29,15 +29,15 @@ jobs:
     - name: Peformance Load test
       uses: grafana/k6-action@v0.2.0
       with:
-        filename: LoadTest.js
+        filename: orenji-backend.Tests/PerformanceTests/LoadTest.js
     - name: Peformance Spike test
       uses: grafana/k6-action@v0.2.0
       with:
-        filename: SpikeTest.js
+        filename: orenji-backend.Tests/PerformanceTests/SpikeTest.js
     - name: Peformance Stress test
       uses: grafana/k6-action@v0.2.0
       with:
-        filename: StressTest.js
+        filename: orenji-backend.Tests/PerformanceTests/StressTest.js
         
   codescan:
     runs-on: windows-latest
