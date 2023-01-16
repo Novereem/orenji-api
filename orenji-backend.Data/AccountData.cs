@@ -24,10 +24,5 @@ namespace orenji_backend.Data
             _orenjiContext.SaveChanges();
             return _orenjiContext.Account.FirstOrDefault(x => x.Email == account.Email && x.Password == account.Password);
         }
-
-        public Account GetAccount(ApiAccount apiAccount)
-        {
-            return _orenjiContext.Account.FirstOrDefault(x => x.Id == apiAccount.Id);
-        }
     }
 }

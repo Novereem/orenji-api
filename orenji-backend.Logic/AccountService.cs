@@ -28,7 +28,13 @@ namespace orenji_backend.Logic
         public string GetAccountWithLogin(ApiAccount apiAccount) 
         {
             Account account = _accountData.GetAccountWithLogin(apiAccount);
-            return _authenticationService.GenerateToken(account, new Jwt());
+
+            if (account != null)
+            {
+                return _authenticationService.GenerateToken(account, new Jwt());
+            }
+
+            return "";
         }
         
         public string GetAccountWithRegister(ApiAccount apiAccount)
@@ -36,12 +42,5 @@ namespace orenji_backend.Logic
             var newAccount = new Account(apiAccount.FirstName, apiAccount.LastName, apiAccount.Password, apiAccount.Email,apiAccount.PhoneNumber, apiAccount.Size, "User");
             return _authenticationService.GenerateToken(_accountData.RegisterAccount(newAccount), new Jwt());
         }
-
-        public object GetAccount(ApiAccount apiAccount)
-        {
-            return _accountData.GetAccount(apiAccount);
-        }
-
-        
     }
 }

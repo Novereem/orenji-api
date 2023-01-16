@@ -7,6 +7,5 @@ namespace orenji_backend.Common.Interfaces
     {
         public Account GetAccountWithLogin(ApiAccount apiAccount);
         public Account RegisterAccount(Account account);
-        public Account GetAccount(ApiAccount apiAccount);
     }
 }
